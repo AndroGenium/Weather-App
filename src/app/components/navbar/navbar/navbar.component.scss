@@ -56,21 +56,35 @@ nav{
             border-radius: 40px;
             background-color: #337b9f;
             position: relative;
+            color: white;
             input{
                 height: 100%;
                 width: 100%;
-
                 border-radius: inherit;
                 background-color: inherit;
                 color: white;
                 border: none;
-
+                font-size: large;
+                text-align: center;
 
             }
             input:hover{
                 border: 1px solid white;
 
             }
+
+            input::-ms-input-placeholder { /* Edge 12 -18 */
+                color: white;
+            }
+
+            input::placeholder {
+                color: white;
+                opacity: 1; /* Firefox */
+                text-align: center;
+                font-size: 16px;
+            }
+
+
             button{
                 height: 20px;
                 width: 20px;
