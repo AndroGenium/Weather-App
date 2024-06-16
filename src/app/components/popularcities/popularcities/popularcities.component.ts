@@ -9,6 +9,9 @@ import { PopularcitiesrandomService } from '../../../services/popularcitiesrando
 export class PopularcitiesComponent {
   constructor(public RSC: PopularcitiesrandomService){}
 
+  ScreenWidth = window.innerWidth
+  AllowedWidth = 500
+
   Cities = this.RSC.GetCityArray(3)
 
 }

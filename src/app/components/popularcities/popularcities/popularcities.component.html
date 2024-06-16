@@ -1,5 +1,8 @@
 <main>
-    <p *ngFor = "let i of this.Cities">69* {{i}}</p>
+    <div *ngIf ="ScreenWidth > AllowedWidth">
+        <p  *ngFor = "let i of this.Cities">69* {{i}}</p>
+    </div>
+    
 </main>
 
 <!-- *ngFor = "let i of this.Cities">{{i}} -->
