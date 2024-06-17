@@ -11,7 +11,7 @@ export class PopularcitiesComponent {
 
   ScreenWidth = window.innerWidth
   AllowedWidth = 500
-
-  Cities = this.RSC.GetCityArray(3)
-
+  ScreenIf = this.ScreenWidth > this.AllowedWidth
+  ThreeCities = this.RSC.GetCityArray(3)
+  OneCity = this.RSC.GetCityArray(1)
 }

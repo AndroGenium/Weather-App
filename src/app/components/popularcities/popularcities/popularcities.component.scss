@@ -4,6 +4,7 @@ main{
     background-color: #003451;
     display: flex;
     align-items: center;
+    justify-content: center;
     div{
         height: inherit;
         width: inherit;
@@ -15,5 +16,12 @@ main{
         cursor: pointer;
         color: white;
         font-size: 14px;
+    }
+    ng-template{
+        height: inherit;
+        width: inherit;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
     }
 }
