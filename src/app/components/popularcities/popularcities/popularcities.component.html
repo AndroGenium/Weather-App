@@ -1,9 +1,9 @@
 <main>
-    <div *ngIf  = "this.ScreenWidth > this.AllowedWidth; else Mobile">
-        <p routerLink ="/CityOverview" *ngFor = "let i of this.ThreeCities">69* {{i}}</p>
+    <div *ngIf="ScreenWidth > AllowedWidth; else Mobile">
+      <p routerLink="/CityOverview" *ngFor="let i of ThreeCities">{{i}}</p>
     </div>
     <ng-template #Mobile>
-        <p routerLink ="/CityOverview">69* {{this.OneCity}}</p>
+      <p routerLink="/CityOverview">{{OneCity}}</p>
     </ng-template>
-</main>
-<!-- *ngFor = "let i of this.Cities">{{i}} -->
+  </main>
+  

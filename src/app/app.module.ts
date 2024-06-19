@@ -9,6 +9,7 @@ import { PopularcitiesComponent } from './components/popularcities/popularcities
 import { NgSwitch } from '@angular/common';
 import { CityoverviewpageComponent } from './components/cityoverviewpage/cityoverviewpage.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgSwitch
+    NgSwitch,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
