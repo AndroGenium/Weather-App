@@ -15,8 +15,7 @@ export class PopularcitiesComponent implements OnInit {
   constructor(public RSC: PopularcitiesrandomService) {}
 
   ngOnInit(): void {
-    this.ThreeCities = this.RSC.GetCityArray(3)
-    this.OneCity = this.RSC.GetCityArray(1)
+
   }
 }
 

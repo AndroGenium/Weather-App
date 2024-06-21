@@ -110,35 +110,4 @@ export class PopularcitiesrandomService {
     'Cairo',
     'Muscat',
   ]
-
-  GetRandom100(){
-    return Math.floor(Math.random() * 100)
-  }
-  GetCityRandom(){
-    return this.PCities[this.GetRandom100()]
-  }
-
-  GetCityArray(Size: any){
-    let x: string[] = []
-    let y!: string
-    let z!: object
-    while(x.length < Size){
-      y = this.GetCityRandom()
-      
-      if(x.includes(y)){
-
-      }
-      else{
-        this.CurrentWeather.getCurrentWeather(y)
-        .subscribe((data: object) =>{
-          z = data
-          console.log(z);
-        })
-        x.push(z +" "+y)
-        
-      }
-    }
-
-    return x
-  }
 }

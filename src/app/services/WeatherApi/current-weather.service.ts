@@ -1,23 +1,26 @@
-import { HttpClient, HttpClientModule, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { KeyService } from './key.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface WeatherResponse {
+  location: {
+    name: string;
+  };
+  current: {
+    temp_c: number;
+  };
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class CurrentWeatherService {
+  private apiUrl = 'http://api.weatherapi.com/v1/current.json';
+  private apiKey = '15764315b50f4622b88125232240506';
 
-  private baseURL = 'http://api.weatherapi.com/v1/current.json';
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient, private Key: KeyService) { }
-
-  getCurrentWeather(location: string,){
-    const params = new HttpParams()
-      .set('key', this.Key.ApiKey)
-      .set('q', location)
-      
-
-    return this.http.get(this.baseURL, { params });
+  getWeather(city: string): Observable<WeatherResponse> {
+    return this.http.get<WeatherResponse>(`${this.apiUrl}?key=${this.apiKey}&q=${city}`);
   }
 }
