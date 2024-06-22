@@ -1,6 +1,17 @@
 import { Injectable } from '@angular/core';
 import { CurrentWeatherService } from './WeatherApi/current-weather.service';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+export interface WeatherResponse {
+  location: {
+    name: string;
+  };
+  current: {
+    temp_c: number;
+  };
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -110,4 +121,27 @@ export class PopularcitiesrandomService {
     'Cairo',
     'Muscat',
   ]
+
+  GetRandom100(){
+    return Math.floor(Math.random()*100);
+  }
+
+  GetRandomCity(){
+    return this.PCities[this.GetRandom100()]
+  }
+
+  GetCityArray(Size: number) {
+    let x: string[] = [];
+    
+     while(x.length < Size) {
+        let y: string = this.GetRandomCity();
+        
+        if (!x.includes(y)) {
+            x.push(`${y}`); 
+        }
+      }
+    return x
+  }
 }
+
+  

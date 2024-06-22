@@ -1,9 +1,7 @@
 <main>
-    <div *ngIf="ScreenWidth > AllowedWidth; else Mobile">
-      <p routerLink="/CityOverview" *ngFor="let i of ThreeCities">{{i}}</p>
-    </div>
-    <ng-template #Mobile>
-      <p routerLink="/CityOverview">{{OneCity}}</p>
-    </ng-template>
-  </main>
+  <div *ngFor="let City of Cities; index as i">
+    <p>{{CitiesInfo[i].__zone_symbol__value}}°</p>
+    <p routerLink="/CityOverview">{{City}}</p>
+  </div>
+</main>
   

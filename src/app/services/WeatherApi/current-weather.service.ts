@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, lastValueFrom } from 'rxjs';
+import { KeyService } from './key.service';
 
 export interface WeatherResponse {
   location: {
@@ -15,12 +16,25 @@ export interface WeatherResponse {
   providedIn: 'root'
 })
 export class CurrentWeatherService {
-  private apiUrl = 'http://api.weatherapi.com/v1/current.json';
-  private apiKey = '15764315b50f4622b88125232240506';
+  private BaseUrl = 'http://api.weatherapi.com/v1/current.json';
+ 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private Key: KeyService) { }
 
-  getWeather(city: string): Observable<WeatherResponse> {
-    return this.http.get<WeatherResponse>(`${this.apiUrl}?key=${this.apiKey}&q=${city}`);
+  async getCurrentWeather(city: string) {
+    try{
+      return await lastValueFrom(
+        this.http.get<WeatherResponse>(`${this.BaseUrl}?key=${this.Key.ApiKey}&q=${city}`)
+      )
+    }
+    catch(error){
+      console.log(error)
+      return null;
+    }
+  }
+
+  async GetCurrentTempC(){
+    
   }
 }
+
