@@ -1,7 +1,11 @@
 <main>
   <div *ngFor="let City of Cities; index as i">
-    <p>{{CitiesInfo[i].__zone_symbol__value}}°</p>
-    <p routerLink="/CityOverview">{{City}}</p>
+    <div class="Cities">
+      <img [src]="CitiesInfo[i].__zone_symbol__value.condition.icon
+      " alt="CitiesInfo[i].__zone_symbol__value.condition.text">
+      <p>{{CitiesInfo[i].__zone_symbol__value.temp_c}}°</p>
+      <p routerLink="/CityOverview">{{City}}</p>
+    </div>
   </div>
 </main>
   

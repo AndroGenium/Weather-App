@@ -13,6 +13,7 @@ export class PopularcitiesComponent implements OnInit {
   Cities!: any;
   Mobile!: number;
   CitiesInfo : any[] = [];
+  
  
 
 
@@ -21,11 +22,15 @@ export class PopularcitiesComponent implements OnInit {
 
    }
    
-  async GetTempC(string : string){
+  async GetData(string : string){
     let data = await this.CurrentWeather.getCurrentWeather(string)
-    let temp_c = data?.current.temp_c
-    return temp_c
+    let Data = data?.current
+    return Data
   }
+
+
+
+
 
 
   ngOnInit(): void {
@@ -35,11 +40,16 @@ export class PopularcitiesComponent implements OnInit {
     }else{
       this.Mobile = 1;
     }
+
     this.Cities = this.RSC.GetCityArray(this.Mobile)
+
     while(this.CitiesInfo.length < this.Mobile){
-      this.CitiesInfo[this.CitiesInfo.length] = this.GetTempC(this.Cities[this.CitiesInfo.length])
+      this.CitiesInfo.push(this.GetData(this.Cities[this.CitiesInfo.length]))
+      
+
     }
     console.log(this.CitiesInfo)
+    
   }
 }
 

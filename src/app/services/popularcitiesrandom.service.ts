@@ -106,7 +106,7 @@ export class PopularcitiesrandomService {
     'Pattaya-Chonburi',
     'Ho Chi Minh City',
     'Playa Del Carmen',
-    'Johor Bahru',
+    'Kutaisi~',
     'Santiago',
     'Tbilisi',
     'Riyadh',

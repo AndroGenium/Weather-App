@@ -1,22 +1,16 @@
 main{
     height: 40px;
     width: 100%;
-    background-color: #337b9f;
+    background-color: #013551;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    font-weight: 300;
+    justify-content: center;
     div{
         .Cities{
-            width: 350px;
             display: flex;
             justify-content: center;
-            gap: 5px;
-        }
-        img{
-            height: 35px;
-            aspect-ratio: 1/1;
-        }
+            gap: 100px;
+        }    
         height: inherit;
         display: flex;
         justify-content: center;

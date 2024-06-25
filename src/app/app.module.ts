@@ -10,6 +10,8 @@ import { NgSwitch } from '@angular/common';
 import { CityoverviewpageComponent } from './components/cityoverviewpage/cityoverviewpage.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ForecastsComponent } from './components/forecasts/forecasts.component';
+import { RainingLoaderComponent } from './loaders/raining-loader/raining-loader.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     PopularcitiesComponent,
     CityoverviewpageComponent,
     FooterComponent,
+    ForecastsComponent,
+    RainingLoaderComponent,
   ],
   imports: [
     BrowserModule,
