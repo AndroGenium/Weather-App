@@ -25,8 +25,7 @@ export class PopularcitiesComponent implements OnInit {
    
   async GetData(string : string){
     let data = await this.CurrentWeather.getCurrentWeather(string)
-    let Data = data?.current
-    return Data
+    return data
   }
 
 
@@ -55,8 +54,8 @@ export class PopularcitiesComponent implements OnInit {
     
   }
 
-  TransferCityData(): void {
-    this.Transfer.CityData = this.CitiesInfo
+  TransferCityData(i:number): void {
+    this.Transfer.CityData = this.CitiesInfo[i]
   }
 }
 

@@ -4,9 +4,9 @@
             <p>Hourly</p>
             <p>Today</p>
             <p>Tomorrow</p>
-            <p>3 Day Forecast</p>
-            <p>Weekend Forecast</p>
-            <p>Astronomy</p>
+            <p *ngIf = "Mobile == false">3 Day Forecast</p>
+            <p *ngIf = "Mobile == false">Weekend Forecast</p>
+            <p *ngIf = "Mobile == false">Astronomy</p>
         </div>
     </div>
 </main>

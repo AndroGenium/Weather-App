@@ -6,16 +6,76 @@
             </button>
         </div>
         <div class="SearchBar navpart">
-            <input type="text" placeholder="Search City Or Zip Code">
-            <button>
+            <input type="text" placeholder="Search City Or Zip Code" [(ngModel)] = "InputLive">
+            <button (click) = "ConfirmInput()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#ffffff" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-            </button>
-            
+            </button>   
         </div>
-        <div class="BurgerMenu navpart">
-            <button>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+
+
+        <!-- Burger Menu Icon -->
+        <div class="BurgerMenu navpart"  *ngIf="!MenuMode; else Cross">
+            <button (click)="ChangeMode()">
+                <svg class="icon burger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="#ffffff"d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                </svg>
             </button>
         </div>
+
+        <!-- Cross Icon and Additional UI for Burger Menu -->
+        <ng-template #Cross>
+            <div class="BurgerMenu navpart">
+                <button (click)="ChangeMode()">
+                    <svg class="icon cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path fill="#ffffff"d="M224 0C236.3 0 248 10.7 248 24V216H424C437.3 216 448 227.7 448 240C448 252.3 437.3 264 424 264H248V448C248 461.3 236.3 472 224 472C211.7 472 200 461.3 200 448V264H24C10.7 264 0 252.3 0 240C0 227.7 10.7 216 24 216H200V24C200 10.7 211.7 0 224 0z" />
+                    </svg>
+                </button>
+                <!-- Additional UI Part -->
+                <div class="burger-menu-content">
+                <!-- Your additional UI elements go here -->
+                    <div class="cont">
+                        <div>
+                            <p class="header">WEATHER FORECASTS</p>
+                            <p>Hourly</p>
+                            <p>Today</p>
+                            <p>Tomorrow</p>
+                            <p>3 Day Forecast</p>
+                            <p>Weekend Forecast</p>
+                            <p>Astronomy</p>
+                        </div>
+                        <div>
+                            <p class="header">CONNECT WITH US</p>
+                            <p>Facebook</p>
+                            <p>Twitter</p>
+                            <p>Instagram</p>
+                            <p>Youtube</p>
+                            <p>Sign up for Newsletter</p>
+                            <p>Business Email</p>
+                        </div>
+                        <div>
+                            <p>Feedback</p>
+                            <p>Mission</p>
+                            <p>Careers</p>
+                            <p>News Room</p>
+                            <p>Advertise With Us</p>
+                            <p>TV</p>
+                            <p>Newsletter Sign Up</p>
+                        </div>
+                        <div>
+                            <p>Terms of Use</p>
+                            <p>Privacy Policy</p>
+                            <p>AdChoices</p>
+                            <p>Accessibility Statement</p>
+                            <p>Data Vendors</p>
+                            <p>Data Rights</p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </ng-template>
+
+          
     </main>
 </nav>

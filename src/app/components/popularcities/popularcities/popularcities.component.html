@@ -1,10 +1,10 @@
 <main>
   <div *ngFor="let City of Cities; index as i">
     <div class="Cities">
-      <img [src]="CitiesInfo[i].__zone_symbol__value.condition.icon
-      " alt="CitiesInfo[i].__zone_symbol__value.condition.text">
-      <p>{{CitiesInfo[i].__zone_symbol__value.temp_c}}°</p>
-      <p routerLink="/CityOverview" (click) = "TransferCityData()">{{City}}</p>
+      <img [src]="CitiesInfo[i].__zone_symbol__value.current.condition.icon
+      " alt="CitiesInfo[i].__zone_symbol__value.current.condition.text">
+      <p>{{CitiesInfo[i].__zone_symbol__value.current.temp_c}}°</p>
+      <p routerLink="/CityOverview" (click) = "TransferCityData(i)">{{City}}</p>
     </div>
   </div>
 </main>
