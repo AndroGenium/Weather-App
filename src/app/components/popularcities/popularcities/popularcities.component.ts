@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PopularcitiesrandomService } from '../../../services/popularcitiesrandom.service';
 import { CurrentWeatherService } from '../../../services/WeatherApi/current-weather.service';
+import { DatatransferService } from '../../../services/datatransfer.service';
 
 @Component({
   selector: 'app-popularcities',
@@ -17,7 +18,7 @@ export class PopularcitiesComponent implements OnInit {
  
 
 
-  constructor(public RSC: PopularcitiesrandomService, private CurrentWeather : CurrentWeatherService)
+  constructor(public RSC: PopularcitiesrandomService, private CurrentWeather : CurrentWeatherService,private Transfer : DatatransferService)
    {
 
    }
@@ -27,6 +28,8 @@ export class PopularcitiesComponent implements OnInit {
     let Data = data?.current
     return Data
   }
+
+
 
 
 
@@ -50,6 +53,10 @@ export class PopularcitiesComponent implements OnInit {
     }
     console.log(this.CitiesInfo)
     
+  }
+
+  TransferCityData(): void {
+    this.Transfer.CityData = this.CitiesInfo
   }
 }
 

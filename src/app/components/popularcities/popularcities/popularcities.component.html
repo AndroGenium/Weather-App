@@ -4,7 +4,7 @@
       <img [src]="CitiesInfo[i].__zone_symbol__value.condition.icon
       " alt="CitiesInfo[i].__zone_symbol__value.condition.text">
       <p>{{CitiesInfo[i].__zone_symbol__value.temp_c}}°</p>
-      <p routerLink="/CityOverview">{{City}}</p>
+      <p routerLink="/CityOverview" (click) = "TransferCityData()">{{City}}</p>
     </div>
   </div>
 </main>
