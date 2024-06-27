@@ -21,6 +21,7 @@ export class SearchService {
   constructor(private http: HttpClient, private Key: KeyService ) { }
 
   async SearchWeather(city: string) {
+    
     try{
       return await lastValueFrom(
         this.http.get<WeatherSearchResponse>(`${this.BaseUrl}?key=${this.Key.ApiKey}&q=${city}`)

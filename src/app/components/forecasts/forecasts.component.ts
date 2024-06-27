@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScrollToElementService } from '../../services/scroll-to-element.service';
 
 @Component({
   selector: 'app-forecasts',
@@ -9,7 +10,7 @@ export class ForecastsComponent {
   ScreenWidth: number = window.innerWidth;
   AllowedWidth: number = 1050;
   Mobile: boolean = false;
-  constructor(){
+  constructor(private scrollService: ScrollToElementService){
     
     if(this.ScreenWidth > this.AllowedWidth){
       this.Mobile = false;
@@ -17,4 +18,10 @@ export class ForecastsComponent {
       this.Mobile = true;
     }
   }
+  scrollToSection(element:string) {
+    this.scrollService.scrollToElement(element);
+  }
+  
+
+
 }

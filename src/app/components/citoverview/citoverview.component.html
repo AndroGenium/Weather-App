@@ -1,0 +1,51 @@
+<main>
+    <div class="GeneralOverview">
+        <div class="location"><p>{{datacurrent.__zone_symbol__value.location.name}}, {{datacurrent.__zone_symbol__value.location.country}}</p></div>
+        <div><p class="Gradus">{{datacurrent.__zone_symbol__value.current.temp_c
+        }}°</p></div>    
+        
+        <p></p>   
+
+    </div>
+    <div class="TodayForecast">
+        <div class="header">
+            <p>Today's Forecast for {{datacurrent.__zone_symbol__value.location.name}}, {{datacurrent.__zone_symbol__value.location.country}}</p>
+        </div>
+        <div class="part">
+            <div>
+                <p class="time">Morning:</p>
+                <p class="temp">{{datamorning.__zone_symbol__value.forecast.forecastday[0].hour[0].temp_c}}°</p>
+                <img [src]="datamorning.__zone_symbol__value.forecast.forecastday[0].day.condition.icon" alt="dataovernight.__zone_symbol__value.forecast.forecastday[0].day.condition.text">
+                
+            </div>
+        </div>
+        <div class="part">
+            <div>
+                <p class="time">Afternoon:</p>
+                <p class="temp">{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].hour[0].temp_c}}°</p>
+                <img [src]="dataafternoon.__zone_symbol__value.forecast.forecastday[0].day.condition.icon" alt="dataovernight.__zone_symbol__value.forecast.forecastday[0].day.condition.text">
+                
+            </div>
+        </div>
+        <div class="part">
+            <div>
+                <p class="time">Evening:</p>
+                <p class="temp">{{dataevening.__zone_symbol__value.forecast.forecastday[0].hour[0].temp_c}}°</p>
+                <img [src]="dataevening.__zone_symbol__value.forecast.forecastday[0].day.condition.icon" alt="dataovernight.__zone_symbol__value.forecast.forecastday[0].day.condition.text">
+                
+            </div>
+        </div>
+        <div class="part">
+            <div>
+                <p class="time">Overnight:</p>
+                <p class="temp">{{dataovernight.__zone_symbol__value.forecast.forecastday[0].hour[0].temp_c}}°</p>
+                <img [src]="dataovernight.__zone_symbol__value.forecast.forecastday[0].day.condition.icon" alt="dataovernight.__zone_symbol__value.forecast.forecastday[0].day.condition.text">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="Weather Today">
+
+    </div>
+</main>

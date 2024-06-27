@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ForecastsComponent } from './components/forecasts/forecasts.component';
 import { RainingLoaderComponent } from './loaders/raining-loader/raining-loader.component';
 import { FormsModule } from '@angular/forms';
+import { CitoverviewComponent } from './components/citoverview/citoverview.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     ForecastsComponent,
     RainingLoaderComponent,
+    CitoverviewComponent,
   ],
   imports: [
     BrowserModule,

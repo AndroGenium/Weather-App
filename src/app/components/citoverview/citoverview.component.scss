@@ -1,0 +1,77 @@
+.GeneralOverview{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    padding-top: 23px;
+    justify-content: center;
+    height: fit-content;
+    width: 1000px;
+    max-width: calc(100% - 100px);
+    border-radius: 20px;
+    background-image: url("https://pics.freeartbackgrounds.com/fullhd/Beautiful_Blue_Sky_with_Clouds_Background-800.jpg");
+    .location{
+        p{
+            font-size: 20px;
+        }
+
+    }
+    p{color: white;}
+    .Gradus{
+        font-size: 120px;
+    }
+}
+
+main{
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.TodayForecast{
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    
+    justify-content: center;
+    width: 1000px;
+    max-width: calc(100% - 100px); 
+
+    border-radius: 20px;
+    background-color: white;
+    .header{
+        p{
+            font-size: 20px;
+        }
+    }
+    div{
+        height: 75px;
+        display: flex;
+        align-items: center;
+    }
+    .part{
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px dotted grey;
+        div{
+            img{
+                height: 50px;
+                width: 50px;
+            }
+            .temp{
+                font-size: 40px;
+                font-weight: 300;
+            }
+            .time{
+                width: 75px;
+                
+            }
+            display: flex;
+            justify-content: space-evenly;
+            width: calc(100% - 50px);
+            max-width: calc(100% - 50px); 
+        }
+    }
+}

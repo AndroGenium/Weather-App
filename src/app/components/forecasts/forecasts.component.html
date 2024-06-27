@@ -2,10 +2,9 @@
     <div>
         <div class="Cities">
             <p>Hourly</p>
-            <p>Today</p>
+            <p (click) = 'scrollToSection("TodayForecast")''>Today</p>
             <p>Tomorrow</p>
             <p *ngIf = "Mobile == false">3 Day Forecast</p>
-            <p *ngIf = "Mobile == false">Weekend Forecast</p>
             <p *ngIf = "Mobile == false">Astronomy</p>
         </div>
     </div>
