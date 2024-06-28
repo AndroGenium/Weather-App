@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PopularcitiesrandomService } from '../../../services/popularcitiesrandom.service';
 import { CurrentWeatherService } from '../../../services/WeatherApi/current-weather.service';
 import { DatatransferService } from '../../../services/datatransfer.service';
+import { HistoryService } from '../../../services/WeatherApi/history.service';
 
 @Component({
   selector: 'app-popularcities',
@@ -18,7 +19,7 @@ export class PopularcitiesComponent implements OnInit {
  
 
 
-  constructor(public RSC: PopularcitiesrandomService, private CurrentWeather : CurrentWeatherService,private Transfer : DatatransferService)
+  constructor(public RSC: PopularcitiesrandomService, private CurrentWeather : CurrentWeatherService,private Transfer : DatatransferService, private history : HistoryService)
    {
 
    }
@@ -29,7 +30,10 @@ export class PopularcitiesComponent implements OnInit {
   }
 
 
-
+  async GetHistoryData(city : string, date: string, hour: string){
+    let data = await this.history.getHistory(city,date, hour)
+    return data
+  }
 
 
 
@@ -56,6 +60,11 @@ export class PopularcitiesComponent implements OnInit {
 
   TransferCityData(i:number): void {
     this.Transfer.CityData = this.CitiesInfo[i]
+    
+    this.Transfer.CityDataMorning = this.GetHistoryData(this.Cities[i],this.Transfer.formattedDate, "9")
+    this.Transfer.CityDataAfternoon = this.GetHistoryData(this.Cities[i],this.Transfer.formattedDate, "14")
+    this.Transfer.CityDataEvening = this.GetHistoryData(this.Cities[i],this.Transfer.formattedDate, "19")
+    this.Transfer.CityDataOvernight = this.GetHistoryData(this.Cities[i],this.Transfer.formattedDate, "23")
   }
 }
 

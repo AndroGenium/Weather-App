@@ -30,7 +30,7 @@ main{
 }
 
 .TodayForecast{
-    height: 380px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     padding:20px;
@@ -72,6 +72,85 @@ main{
             justify-content: space-evenly;
             width: calc(100% - 50px);
             max-width: calc(100% - 50px); 
+        }
+    }
+}
+
+.WeatherToday{
+    .header{
+        padding-bottom: 20px;
+        p{
+            font-size: 20px;
+        }
+    }
+
+    .feels{
+        height: 90px;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .f{
+            font-size: 14px;
+            font-weight: 300;
+        }
+        .grad{
+            font-size:50px;
+        }
+    }
+    .extra{
+        height: fit-content;
+       
+        display: flex;
+        align-items: flex-start; /* Changed from center to flex-start */
+        gap: 50px;
+        .z{
+            div{
+                border-bottom: 1px dotted grey;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+            }
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Added flex-grow */
+        }
+    }
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 1000px;
+    max-width: calc(100% - 100px); 
+
+    border-radius: 20px;
+    background-color: white;
+}
+
+.astro{
+    p{
+        font-size: 20px;
+    }
+    .timez{
+        font-weight: 300;
+        width: 160px
+    }
+    .part{
+        div{
+            justify-content: space-between;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 660px) {
+    .extra{
+        flex-direction: column;
+        gap: 0px;
+        .z{
+            width: 100%; /* Optional: to ensure full width on small screens */
         }
     }
 }

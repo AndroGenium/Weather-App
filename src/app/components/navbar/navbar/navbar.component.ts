@@ -1,9 +1,9 @@
 
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { CurrentWeatherService } from '../../../services/WeatherApi/current-weather.service';
 import { SearchService } from '../../../services/WeatherApi/search.service';
-import { timeout } from 'rxjs';
+import { filter, timeout } from 'rxjs';
 import { DatatransferService } from '../../../services/datatransfer.service';
 import { HistoryService } from '../../../services/WeatherApi/history.service';
 
@@ -18,32 +18,10 @@ export class NavbarComponent {
   CityConfirmed!:any;
   SearchedCityData !:any
   CityFound !:any
-  currentDate !:any
-  year !:any
-  month !:any
-  day !:any
-  hours !:any
-  minutes !:any
-  seconds !:any
-  formattedDate !:any
-  formattedDateSeconds!:any
+  currentRoute!: string;
 
   constructor(private WeatherSearcher: SearchService, private Transport: DatatransferService, private currentweather: CurrentWeatherService, private router: Router, private history : HistoryService)
-  {
-
-    this.currentDate = new Date();
-    this.year = this.currentDate.getFullYear();
-    this.month = (this.currentDate.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
-    this.day = this.currentDate.getDate().toString().padStart(2, '0');
-    this.hours = this.currentDate.getHours().toString().padStart(2, '0');
-    this.minutes = this.currentDate.getMinutes().toString().padStart(2, '0');
-    this.seconds = this.currentDate.getSeconds().toString().padStart(2, '0');
-    
-    this.formattedDate = `${this.year}-${this.month}-${this.day}`;
-    this.formattedDateSeconds = `${this.year}-${this.month}-${this.day} ${this.hours}:${this.minutes}:${this.seconds}`;
-    
-
-  }
+  { }
   
   async SearchCity(string : string){
     let data = await this.WeatherSearcher.SearchWeather(string);
@@ -73,13 +51,15 @@ export class NavbarComponent {
 
           this.Transport.CityData = this.GetData(this.CityConfirmed[0].name)
 
-          this.Transport.CityDataMorning = this.GetHistoryData(this.CityConfirmed[0].name,this.formattedDate, "9")
-          this.Transport.CityDataAfternoon = this.GetHistoryData(this.CityConfirmed[0].name,this.formattedDate, "14")
-          this.Transport.CityDataEvening = this.GetHistoryData(this.CityConfirmed[0].name,this.formattedDate, "19")
-          this.Transport.CityDataOvernight = this.GetHistoryData(this.CityConfirmed[0].name,this.formattedDate, "23")
+          this.Transport.CityDataMorning = this.GetHistoryData(this.CityConfirmed[0].name,this.Transport.formattedDate, "9")
+          this.Transport.CityDataAfternoon = this.GetHistoryData(this.CityConfirmed[0].name,this.Transport.formattedDate, "14")
+          this.Transport.CityDataEvening = this.GetHistoryData(this.CityConfirmed[0].name,this.Transport.formattedDate, "19")
+          this.Transport.CityDataOvernight = this.GetHistoryData(this.CityConfirmed[0].name,this.Transport.formattedDate, "23")
 
           console.log(this.Transport.CityData)
+
           this.router.navigate(['/CityOverview']);
+          
         }else{
           alert("City not found")
         } // Log here, after the promise resolves

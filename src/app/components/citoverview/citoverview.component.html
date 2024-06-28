@@ -45,7 +45,102 @@
         </div>
     </div>
 
-    <div class="Weather Today">
-
+    <div class="WeatherToday">
+        <div class="header">
+            <p>Weather Today in {{datacurrent.__zone_symbol__value.location.name}}, {{datacurrent.__zone_symbol__value.location.country}}</p>           
+        </div>
+        <div class="content">
+            <div class="feels">
+                <p class="f">Feels Like</p>
+                <p class="grad">{{datacurrent.__zone_symbol__value.current.feelslike_c
+                }}°</p>
+            </div>
+            <div class="extra">
+                <div class="z">
+                    <div>
+                        <p>High/Low</p>
+                        <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].day.maxtemp_c}}°/{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].day.mintemp_c}}°</p>
+                    </div>
+                    <div>
+                        <p>Humidity</p>
+                        <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].day.avghumidity}}%</p>
+                    </div>
+                    <div>
+                        <p>Pressure</p>
+                        <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].hour[0].pressure_in}} in</p>
+                    </div>
+                    <div>
+                        <p>Visibility</p>
+                        <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].hour[0].vis_km}}km</p>
+                    </div>  
+                </div>
+                <div class="z">
+                    <div>
+                        <p>Wind</p>
+                        <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].hour[0].wind_kph}} kph</p>
+                    </div>
+                    <div>
+                        <p>Dew Point</p>
+                        <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].hour[0].dewpoint_c}}°</p>
+                    </div>
+                    <div>
+                        <p>UV Index</p>
+                        <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].day.uv}}/11</p>
+                    </div>
+                    <div>
+                        <p>Moon Phase</p>
+                        <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].astro.moon_phase}}</p>
+                    </div>  
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="TodayForecast astro">
+        <div class="header">
+            <p>Today's Astronomy for {{datacurrent.__zone_symbol__value.location.name}}, {{datacurrent.__zone_symbol__value.location.country}}</p>
+        </div>
+        <div class="part">
+            <div>
+                <p class="timez">Sunrise:</p>
+                <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].astro.sunrise}}</p>
+                
+            </div>
+        </div>
+        <div class="part">
+            <div>
+                <p class="timez">Sunset:</p>
+                <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].astro.sunset}}</p>
+
+                
+            </div>
+        </div>
+        <div class="part">
+            <div>
+                <p class="timez">Moonrise:</p>
+                <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].astro.moonrise}}</p>
+
+                
+            </div>
+        </div>
+        <div class="part">
+            <div>
+                <p class="timez">Moonset:</p>
+                <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].astro.moonset}}</p>
+            </div>
+        </div>
+        <div class="part">
+            <div>
+                <p class="timez">Moon Phase:</p>
+                <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].astro.moon_phase}}</p>
+            </div>
+        </div>
+        <div class="part">
+            <div>
+                <p class="timez">Moon Ilumination:</p>
+                <p>{{dataafternoon.__zone_symbol__value.forecast.forecastday[0].astro.moon_illumination}}%</p>
+            </div>
+        </div>
+        
+    </div>
+    
 </main>

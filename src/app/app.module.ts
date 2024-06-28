@@ -14,6 +14,12 @@ import { ForecastsComponent } from './components/forecasts/forecasts.component';
 import { RainingLoaderComponent } from './loaders/raining-loader/raining-loader.component';
 import { FormsModule } from '@angular/forms';
 import { CitoverviewComponent } from './components/citoverview/citoverview.component';
+import { MissionpageComponent } from './components/missionpage/missionpage.component';
+import { NewsletterPageComponent } from './components/newsletter-page/newsletter-page.component';
+import { DatavendorspageComponent } from './components/datavendorspage/datavendorspage.component';
+import { AccessibilitypageComponent } from './components/accessibilitypage/accessibilitypage.component';
+import { TermsOfUsepageComponent } from './components/terms-of-usepage/terms-of-usepage.component';
+import { PrivacyPolicyPageComponent } from './components/privacy-policy-page/privacy-policy-page.component';
 
 
 @NgModule({
@@ -27,6 +33,12 @@ import { CitoverviewComponent } from './components/citoverview/citoverview.compo
     ForecastsComponent,
     RainingLoaderComponent,
     CitoverviewComponent,
+    MissionpageComponent,
+    NewsletterPageComponent,
+    DatavendorspageComponent,
+    AccessibilitypageComponent,
+    TermsOfUsepageComponent,
+    PrivacyPolicyPageComponent,
   ],
   imports: [
     BrowserModule,
